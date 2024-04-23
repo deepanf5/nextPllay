@@ -30,7 +30,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+               {
+                "input": "src/saga-green.css",
+                "bundleName": "saga-green",
+                "inject": false
+              },
+              {
+                "input": "src/md-dark-indigo.css",
+                "bundleName": "md-dark-indigo",
+                "inject": false
+              },
+              {
+                "input": "src/mdc-dark-deeppurple.css",
+                "bundleName": "mdc-dark-deeppurple",
+                "inject": false
+              }
             ],
             "scripts": [],
             "server": "src/main.server.ts",
