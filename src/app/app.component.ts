@@ -4,8 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { ThemeService } from './services/theme.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeService } from './themeservices/theme.service';
+import { TopBarComponent } from './layout/components/top-bar/top-bar.component';
+import { LayoutComponent } from './layout/components/layout/layout.component';
 
 interface City {
   name: string;
@@ -16,7 +19,7 @@ interface City {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ButtonModule,DropdownModule,FormsModule,],
+  imports: [RouterOutlet,ButtonModule,DropdownModule,FormsModule,LayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
