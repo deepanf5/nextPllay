@@ -13,7 +13,6 @@ export class ThemeService {
 
     if (true) {
       themeLink.href = theme + '.css'
-      console.log(themeLink)
     }
   }
 }

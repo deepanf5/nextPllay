@@ -15,6 +15,7 @@ import { NavigationEnd,Router } from '@angular/router';
 })
 export class LayoutComponent implements OnDestroy {
 
+  
   overlayMenuOpenSubscription!: Subscription;
 
   menuOutsideClickListener: any;
@@ -33,10 +34,9 @@ export class LayoutComponent implements OnDestroy {
         this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
 
           const isOutSideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target)
-        || this.appTopbar.menuButton.nativeElement.isSameNode(event.target) || this.appTopbar.menuButton.nativeElement.contains(event.target));
+        || this.appTopbar.menuButton.nativeElement.isSameNode(event?.target) || this.appTopbar.menuButton.nativeElement.contains(event.target));
           
         if(isOutSideClicked) {
-
           this.hideMenu()
         }
 
@@ -45,12 +45,15 @@ export class LayoutComponent implements OnDestroy {
       
     })
 
-    this.router.events.pipe(filter((event: any) => event instanceof NavigationEnd))
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
             .subscribe(() => {
                 this.hideMenu();
                 // this.hideProfileMenu();
             });
 } 
+  ngAfterViewInit(): void {
+    
+  }
 
 hideMenu() {
   this.layoutService.state.overlayMenuActive = false;
@@ -60,20 +63,20 @@ hideMenu() {
       this.menuOutsideClickListener();
       this.menuOutsideClickListener = null;
   }
-  this.unblockBodyScroll();
+  // this.unblockBodyScroll();
 }
 
 
 
-unblockBodyScroll(): void {
-  if (document.body.classList) {
-      document.body.classList.remove('blocked-scroll');
-  }
-  else {
-      document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-          'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-  }
-}
+// unblockBodyScroll(): void {
+//   if (document.body.classList) {
+//       document.body.classList.remove('blocked-scroll');
+//   }
+//   else {
+//       document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
+//           'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+//   }
+// }
 
 blockBodyScroll(): void {
   if (document.body.classList) {

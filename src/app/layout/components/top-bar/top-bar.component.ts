@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { LayoutService } from '../../services/layout.service';
+import { ThemeService } from '../../../themeservices/theme.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -10,6 +11,7 @@ import { LayoutService } from '../../services/layout.service';
 })
 export class TopBarComponent {
 
+  dark:boolean = false;  
   @ViewChild('menubutton') menuButton!: ElementRef;
 
   @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
@@ -17,7 +19,23 @@ export class TopBarComponent {
   @ViewChild('topbarmenu') menu!: ElementRef;
 
 
-  constructor(public layoutService:LayoutService){}
+  constructor(public layoutService:LayoutService,private themeServices: ThemeService){}
+  isExpanding = false;
+  
+
+  theme: any
+
+  ngOnInit() {
+  
+  }
+
+
+  darkTheme() {
+    this.dark = !this.dark
+    if(this.dark) this.themeServices.switchTheme('md-dark-indigo')
+    else this.themeServices.switchTheme('saga-green')
+    
+  }
 
 
 }
