@@ -4,12 +4,26 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 import { CommonModule } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { LayoutService } from '../../services/layout.service';
-import { NavigationEnd,Router } from '@angular/router';
+import { NavigationEnd,Router, RouterModule, Routes } from '@angular/router';
+
+
+export const layoutRoutes:Routes = [
+
+  {
+    path:'',loadComponent:() => import('../../../layout/components/dashboard/dashboard.component').then(c => c.DashboardComponent)
+  },
+  {
+    path:'movies',loadComponent:() => import('../../../movies/movies.component').then(c => c.MoviesComponent)
+  },
+  {
+    path:'tv-series',loadComponent:() => import('../../../tv-series/tv-series.component').then(c => c.TvSeriesComponent)
+  }
+]
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [TopBarComponent,SideBarComponent,CommonModule],
+  imports: [TopBarComponent,SideBarComponent,CommonModule,RouterModule],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
 })
