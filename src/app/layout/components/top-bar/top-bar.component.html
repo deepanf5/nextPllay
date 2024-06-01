@@ -1,4 +1,4 @@
-<div class="layout-topbar">
+<!-- <div class="layout-topbar">
     <a class="layout-topbar-logo" routerLink="">
          <span><img src="../../../../assets/images/nextPlay.png" alt="logo"></span>
     </a>
@@ -9,12 +9,6 @@
                 <div class="mx-3">username</div>
                 <i class="pi pi-user" style="color: 'var(--primary-color)'"></i>
             </div>   
-            <!-- <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
-                <i class="pi pi-envelope" style="color: 'var(--primary-color)'"></i>
-            </div>   
-            <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
-                <i class="pi pi-bell" style="color: 'var(--primary-color)'"></i>
-            </div>    -->
             <button type="button" (click)="darkTheme()" class="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem mx-3 surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary">
                 @if (dark) {
                     <i class="pi pi-moon"></i>
@@ -23,4 +17,14 @@
                     <i class="pi pi-sun"></i>
                 }
             </button>
+</div> -->
+
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+         <span>SAKAI</span>
+    </a>
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
+        <i class="pi pi-bars"></i>
+    </button>
 </div>

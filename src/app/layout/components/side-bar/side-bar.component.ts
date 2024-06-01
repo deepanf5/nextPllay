@@ -5,7 +5,8 @@ import { JsonPipe } from '@angular/common';
 
 // font awesome 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faClapperboard, faTv, faBaseball } from '@fortawesome/free-solid-svg-icons';
+import { faClapperboard, faTv, faBaseball, faEarth } from '@fortawesome/free-solid-svg-icons';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-side-bar',
@@ -23,6 +24,7 @@ export class SideBarComponent implements OnInit {
     this.menuitems = [
       {
           label: 'Dash board',
+          icon:faEarth,
           routerLink: [''],
           items: [
               {
