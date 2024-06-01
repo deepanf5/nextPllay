@@ -17,6 +17,9 @@ export const layoutRoutes:Routes = [
   },
   {
     path:'tv-series',loadComponent:() => import('../../../tv-series/tv-series.component').then(c => c.TvSeriesComponent)
+  },
+  {
+    path:'sports',loadComponent:() => import('../../../sports/sports.component').then(c => c.SportsComponent)
   }
 ]
 
