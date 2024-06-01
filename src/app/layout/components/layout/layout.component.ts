@@ -16,7 +16,7 @@ export const layoutRoutes:Routes = [
     path:'movies',loadComponent:() => import('../../../movies/movies.component').then(c => c.MoviesComponent)
   },
   {
-    path:'tv-series',loadComponent:() => import('../../../tv-series/tv-series.component').then(c => c.TvSeriesComponent)
+    path:'series',loadComponent:() => import('../../../series/series.component').then(c => c.SeriesComponent)
   },
   {
     path:'sports',loadComponent:() => import('../../../sports/sports.component').then(c => c.SportsComponent)
