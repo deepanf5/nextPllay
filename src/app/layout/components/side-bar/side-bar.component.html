@@ -3,7 +3,7 @@
         <li class="cursor-pointer "><a class="no-underline" routerLinkActive="text-primary font-bold" [routerLink]="navitems.routerLink">{{navitems.label}}</a></li>
         @if (navitems.items) {
             @for (item of navitems.items; track $index) {
-                <li class="cursor-pointer p-2 mt-2 hover:surface-300"><a class="no-underline" routerLinkActive="text-primary font-bold" [routerLink]="item.routerLink"><i class="{{item.icon}} + mx-2" style="font-size: 1rem"></i>{{item.label}}</a></li>
+                <li class="cursor-pointer p-2 mt-2 hover:surface-300"><a class="no-underline" routerLinkActive="text-primary font-bold" [routerLink]="item.routerLink"> <fa-icon class="mr-2" [icon]="item.icon"></fa-icon> {{item.label}}</a></li>
             }
         }
     }
