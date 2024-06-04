@@ -11,32 +11,7 @@ import { ThemeService } from '../../../themeservices/theme.service';
 })
 export class TopBarComponent {
 
-  // dark:boolean = false;  
-  // @ViewChild('menubutton') menuButton!: ElementRef;
-
-  // @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
-
-  // @ViewChild('topbarmenu') menu!: ElementRef;
-
-
-  // constructor(public layoutService:LayoutService,private themeServices: ThemeService){}
-  // isExpanding = false;
-  
-
-  // theme: any
-
-  // ngOnInit() {
-  
-  // }
-
-
-  // darkTheme() {
-  //   this.dark = !this.dark
-  //   if(this.dark) this.themeServices.switchTheme('md-dark-indigo')
-  //   else this.themeServices.switchTheme('saga-green')
-    
-  // }
-
+  dark:boolean = false;  
   @ViewChild('menubutton') menuButton!: ElementRef;
 
   @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
@@ -44,6 +19,23 @@ export class TopBarComponent {
   @ViewChild('topbarmenu') menu!: ElementRef;
 
 
-  constructor(public layoutService:LayoutService){}
+  constructor(public layoutService:LayoutService,private themeServices: ThemeService){}
+  isExpanding = false;
+  
+
+  theme: any
+
+  ngOnInit() {
+  
+  }
+
+
+  darkTheme() {
+    this.dark = !this.dark
+    if(this.dark) this.themeServices.switchTheme('md-dark-indigo')
+    else this.themeServices.switchTheme('saga-green')
+    
+  }
+
 
 }
