@@ -6,7 +6,8 @@
     top: 0;
     width: 100%;
     padding: 0 2rem;
-    background-color: surface-overlay;
+    background-color: var(--primary-color-text); 
+    color: var(--primary-color);
     transition: left .2s;
     display: flex;
     align-items: center;

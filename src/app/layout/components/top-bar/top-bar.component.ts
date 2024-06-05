@@ -11,7 +11,7 @@ import { ThemeService } from '../../../themeservices/theme.service';
 })
 export class TopBarComponent {
 
-  dark:boolean = false;  
+  dark:boolean = true;  
   @ViewChild('menubutton') menuButton!: ElementRef;
 
   @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
