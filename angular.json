@@ -32,8 +32,8 @@
             "styles": [
               "src/styles.scss",
                {
-                "input": "src/themes/saga-green.css",
-                "bundleName": "saga-green",
+                "input": "src/themes/rhea.css",
+                "bundleName": "rhea",
                 "inject": false
               },
               {
