@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CarouselModule],
+  imports: [CarouselModule,TagModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -34,9 +35,7 @@ export class DashboardComponent implements OnInit {
   ]
   ngOnInit(): void {
     
-  
-  
-    this.responsiveOptions = [
+  this.responsiveOptions = [
       {
           breakpoint: '1199px',
           numVisible: 1,
@@ -53,6 +52,7 @@ export class DashboardComponent implements OnInit {
           numScroll: 1
       }
   ];
+
 
 
 
