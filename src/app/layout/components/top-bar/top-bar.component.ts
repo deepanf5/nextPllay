@@ -33,7 +33,7 @@ export class TopBarComponent {
   darkTheme() {
     this.dark = !this.dark
     if(this.dark) this.themeServices.switchTheme('lara-dark-teal')
-    else this.themeServices.switchTheme('saga-green')
+    else this.themeServices.switchTheme('rhea')
     
   }
 
