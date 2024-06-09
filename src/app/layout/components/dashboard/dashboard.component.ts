@@ -16,23 +16,21 @@ export class DashboardComponent implements OnInit {
 
 
     {
-    image:"https://plus.unsplash.com/premium_vector-1711987766219-5a62655e2089?bg=FFFFFF&q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:"https://images8.alphacoders.com/134/thumb-1920-1344731.jpeg"
     },
     {
-    image:"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:"https://images7.alphacoders.com/136/thumb-1920-1364834.png"
     },
     {
-    image:"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:"https://images6.alphacoders.com/135/1353224.jpeg"
     },
     {
-    image:"https://plus.unsplash.com/premium_vector-1682303472038-719343faa767?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:"https://images7.alphacoders.com/135/thumb-1920-1358613.jpeg"
     },
     {
-    image:"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image:"https://4kwallpapers.com/images/walls/thumbs_3t/16612.jpg"
     },
-    {
-    image:"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+
   ]
   ngOnInit(): void {
     
