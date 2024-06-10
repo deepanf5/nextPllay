@@ -3,3 +3,25 @@
     font-size: 1rem;
     padding: 1px;
 }
+
+.poster {
+    object-fit: cover;
+}
+
+.marvels {
+    margin-top: 17rem;
+}
+
+
+.movies-card {
+
+    transition: transform .2s, left .3s;
+
+}
+.movies-card:hover {
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+-ms-transform: scale(1.1);
+transform: scale(1.1);
+}

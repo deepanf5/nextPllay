@@ -11,8 +11,8 @@
     >
         <ng-template let-product pTemplate="item">
             <div class="p-0">
-                <div class="mb-8">
-                    <div class="h-20rem">
+                <div class="mb-6">
+                    <div class="h-re25m">
                         <img 
                             src="{{ product.image }}" 
                             [alt]="product.caption" 
@@ -24,47 +24,22 @@
 </p-carousel>
         </div>
     </div>
-    
-    <div class="grid mt-8">
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-    </div>
-    <div class="grid mt-5">
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-    </div>
-    <div class="grid mt-5">
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-        <div class="col-12 md:col-6 lg:col-3">
-            <div class="text-center p-3 border-round-sm  font-bold h-8rem">col-12 md:col-6 lg:col-3</div>
-        </div>
-    </div>
 </section>
+ 
+
+    <section class="marvels">
+        <h2 class="capitalize">marvels universe</h2>
+        <div class="grid">
+            @for (movie of marvels; track $index) {
+                <div class="col-12 md:col-6 lg:col-3 cursor-pointer">
+                    <div class="movies-card text-center border-round-sm border-1 border-primary font-bold h-20rem">
+                    <img class="w-full h-full" src="{{movie.poster}}" alt="{{movie.title}}">
+                    </div>
+                    </div>
+            }
+        </div>
+        <p class="m-0 text-right text-primary"><a class="mx-1 text-primary" [routerLink]="''">see more</a> <fa-icon
+        class="mr-2"
+        [icon]="faDoubleRight">
+        </fa-icon></p>
+    </section>
