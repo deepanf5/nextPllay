@@ -1,0 +1,16 @@
+<section class="Action-scifi">
+    <h2 class="capitalize">Action / Thriller</h2>
+    <div class="grid">
+        @for (movie of Thirller; track $index) {
+            <div class="col-12 md:col-6 lg:col-2 cursor-pointer m-2">
+                <div class="movies-card text-center border-round-sm border-1 border-primary font-bold  h-15rem">
+                <img class="w-full h-full" src="{{movie.poster}}" alt="{{movie.title}}">
+                </div>
+                </div>
+        }
+    </div>
+    <p class="m-0 text-right text-primary"><a class="mx-1 text-primary" [routerLink]="''">see more</a> <fa-icon
+    class="mr-2"
+    [icon]="faDoubleRight">
+    </fa-icon></p>
+</section>

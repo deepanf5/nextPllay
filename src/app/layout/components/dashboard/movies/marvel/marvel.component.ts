@@ -20,7 +20,8 @@ export class MarvelComponent {
       title:'Iron Man',
       genre:'Action/Adventure',
       releaseDate:'2008',
-      poster:"https://i.pinimg.com/originals/14/85/b5/1485b5a78274180bcce4a0fce0ef3c4a.jpg"
+      poster:"https://i.pinimg.com/originals/14/85/b5/1485b5a78274180bcce4a0fce0ef3c4a.jpg",
+      language:'Engilsh'
 
     },
     {
@@ -28,7 +29,8 @@ export class MarvelComponent {
       title:'thor ragnarok',
       genre:'Action/Adventure',
       releaseDate:'2017',
-      poster:"https://i.pinimg.com/564x/92/7f/57/927f573aee7755f33578ba1ddd984235.jpg"
+      poster:"https://i.pinimg.com/564x/92/7f/57/927f573aee7755f33578ba1ddd984235.jpg",
+      language:'Engilsh'
 
     },
     {
@@ -36,7 +38,8 @@ export class MarvelComponent {
       title:'capitan america',
       genre:'Action/Adventure',
       releaseDate:'2011',
-      poster:"https://i.pinimg.com/564x/ea/ab/9f/eaab9f496fbc60e586f0d073d3fcc693.jpg"
+      poster:"https://i.pinimg.com/564x/ea/ab/9f/eaab9f496fbc60e586f0d073d3fcc693.jpg",
+      language:'Engilsh'
 
     },
     {
@@ -44,7 +47,8 @@ export class MarvelComponent {
       title:'Avenger Infinity war',
       genre:'Action/Adventure',
       releaseDate:'2018',
-      poster:"https://i.pinimg.com/564x/db/b9/7a/dbb97a265c3754f6965d2bfcff52ab6f.jpg"
+      poster:"https://i.pinimg.com/564x/db/b9/7a/dbb97a265c3754f6965d2bfcff52ab6f.jpg",
+      language:'Engilsh'
 
     },
     {
@@ -52,7 +56,8 @@ export class MarvelComponent {
       title:'Avenger',
       genre:'Action/Adventure',
       releaseDate:'27 April 2012',
-      poster:"https://i.pinimg.com/564x/cf/41/f8/cf41f89b434e68864d0e3360d87d1cbf.jpg"
+      poster:"https://i.pinimg.com/564x/cf/41/f8/cf41f89b434e68864d0e3360d87d1cbf.jpg",
+      language:'Engilsh'
 
     },
 ]

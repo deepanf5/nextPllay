@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { MarvelComponent } from './movies/marvel/marvel.component';
 import { ActionScifiComponent } from './movies/action-scifi/action-scifi.component';
+import { ThrillerComponent } from './movies/thriller/thriller.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +16,8 @@ import { ActionScifiComponent } from './movies/action-scifi/action-scifi.compone
     FontAwesomeModule,
     RouterModule,
     MarvelComponent,
-    ActionScifiComponent
+    ActionScifiComponent,
+    ThrillerComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
