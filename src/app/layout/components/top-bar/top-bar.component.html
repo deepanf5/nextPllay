@@ -2,26 +2,13 @@
     <a class="layout-topbar-logo" routerLink="">
          <span><img src="../../../../assets/images/nextPlay.png" alt="logo"></span>
     </a>
-        <i #menubutton (click)="layoutService.onMenuToggle()" class="pi pi-bars cursor-pointer" style="color: 'var(--primary-color)'"></i>
-
-        <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
-            <div class="mx-3">username</div>
-            <i class="pi pi-user" style="color: 'var(--primary-color)'"></i>
-        </div>   
-    
-        
+        <i #menubutton (click)="layoutService.onMenuToggle()" class="pi pi-bars cursor-pointer" style="color: 'var(--primary-color)'"></i>        
     
         <div class="layout-topbar-menu">
             <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
                 <div class="mx-3">username</div>
                 <i class="pi pi-user" style="color: 'var(--primary-color)'"></i>
             </div>   
-            <!-- <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
-                <i class="pi pi-envelope" style="color: 'var(--primary-color)'"></i>
-            </div>   
-            <div class="flex flex-shrink-0 align-items-center justify-content-center mx-3">
-                <i class="pi pi-bell" style="color: 'var(--primary-color)'"></i>
-            </div>    -->
             <button type="button" (click)="darkTheme()" class="flex flex-shrink-0 px-link border-1 border-solid w-2rem h-2rem mx-3 surface-border border-round surface-card align-items-center justify-content-center transition-all transition-duration-300 hover:border-primary">
                 @if (dark) {
                     <i class="pi pi-moon"></i>
@@ -31,3 +18,4 @@
                 }
             </button>
 </div>
+

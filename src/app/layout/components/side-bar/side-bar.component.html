@@ -1,9 +1,30 @@
-<ul class="layout-menu">
-    <li class="cursor-pointer"><a [routerLink]="'movies'">movies</a></li>
-    <li class="cursor-pointer"><a [routerLink]="'tv-series'">tv-series</a></li>
-    <li>home</li>
-    <li>home</li>
-    <li>home</li>
-    <li>home</li>
-    <li>home</li>
+<ul class="layout-menu m-0 p-0 list-none">
+    @for (navitems of menuitems; track $index) {
+        <li class="cursor-pointer">
+            <a 
+            class="no-underline"
+            routerLinkActive="text-primary font-bold" 
+            [routerLink]="navitems.routerLink">
+            {{navitems.label}}
+            </a>
+        </li>
+        
+        @if (navitems.items) {
+            @for (item of navitems.items; track $index) {
+                    <li 
+                        class="cursor-pointer
+                         p-2 mt-2 hover:surface-200"
+                        [routerLink]="item.routerLink">
+                        <a class="no-underline"
+                         routerLinkActive="text-primary font-bold">
+                        <fa-icon 
+                         class="mr-2" 
+                        [icon]="item.icon">
+                        </fa-icon>{{item.label}}</a>
+                    </li>
+                
+                
+            }
+        }
+    }
 </ul>

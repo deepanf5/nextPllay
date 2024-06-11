@@ -1,7 +1,7 @@
-import { Component, OnDestroy, Renderer2, ViewChild } from '@angular/core';
+import { Component, Inject, OnDestroy, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { TopBarComponent } from '../top-bar/top-bar.component';
 import { SideBarComponent } from '../side-bar/side-bar.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { LayoutService } from '../../services/layout.service';
 import { NavigationEnd,Router, RouterModule, Routes } from '@angular/router';
@@ -16,7 +16,10 @@ export const layoutRoutes:Routes = [
     path:'movies',loadComponent:() => import('../../../movies/movies.component').then(c => c.MoviesComponent)
   },
   {
-    path:'tv-series',loadComponent:() => import('../../../tv-series/tv-series.component').then(c => c.TvSeriesComponent)
+    path:'series',loadComponent:() => import('../../../series/series.component').then(c => c.SeriesComponent)
+  },
+  {
+    path:'sports',loadComponent:() => import('../../../sports/sports.component').then(c => c.SportsComponent)
   }
 ]
 
@@ -40,7 +43,7 @@ export class LayoutComponent implements OnDestroy {
 
   @ViewChild(TopBarComponent) appTopbar!: TopBarComponent;
 
-  constructor(public layoutService: LayoutService, public renderer: Renderer2, public router: Router) {
+  constructor(public layoutService: LayoutService, public renderer: Renderer2,@Inject(PLATFORM_ID) private platformId: Object, public router: Router) {
 
     this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
 
@@ -65,9 +68,6 @@ export class LayoutComponent implements OnDestroy {
                 // this.hideProfileMenu();
             });
 } 
-  ngAfterViewInit(): void {
-    
-  }
 
 hideMenu() {
   this.layoutService.state.overlayMenuActive = false;
@@ -77,29 +77,50 @@ hideMenu() {
       this.menuOutsideClickListener();
       this.menuOutsideClickListener = null;
   }
-  // this.unblockBodyScroll();
+  this.unblockBodyScroll();
 }
 
 
 
-// unblockBodyScroll(): void {
-//   if (document.body.classList) {
-//       document.body.classList.remove('blocked-scroll');
-//   }
-//   else {
-//       document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-//           'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-//   }
-// }
+unblockBodyScroll(): void {
+  if(isPlatformBrowser(this.platformId)) {
+    this.doClientsideActionUnBlockbodyScroll()
+  }
+ 
+}
+
+
+private doClientsideActionUnBlockbodyScroll() {
+  if (document.body.classList) {
+    document.body.classList.remove('blocked-scroll');
+}
+else {
+    document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
+        'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+
+}
 
 blockBodyScroll(): void {
-  if (document.body.classList) {
-      document.body.classList.add('blocked-scroll');
+  if(isPlatformBrowser(this.platformId)) {
+    this.doClientSideAction()
   }
-  else {
-      document.body.className += ' blocked-scroll';
-  }
+
+  
 }
+
+ private doClientSideAction() {
+  if (document.body.classList) {
+    document.body.classList.add('blocked-scroll');
+}
+else {
+    document.body.className += ' blocked-scroll';
+}
+  
+}
+
+
+
 
 get containerClass() {
   return {

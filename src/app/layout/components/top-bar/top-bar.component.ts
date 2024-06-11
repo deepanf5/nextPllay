@@ -11,7 +11,7 @@ import { ThemeService } from '../../../themeservices/theme.service';
 })
 export class TopBarComponent {
 
-  dark:boolean = false;  
+  dark:boolean = true;  
   @ViewChild('menubutton') menuButton!: ElementRef;
 
   @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
@@ -32,8 +32,8 @@ export class TopBarComponent {
 
   darkTheme() {
     this.dark = !this.dark
-    if(this.dark) this.themeServices.switchTheme('md-dark-indigo')
-    else this.themeServices.switchTheme('saga-green')
+    if(this.dark) this.themeServices.switchTheme('lara-dark-teal')
+    else this.themeServices.switchTheme('rhea')
     
   }
 

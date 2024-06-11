@@ -1,1 +1,46 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-12 h-26rem p-0 m-0">
+            <h1 class="mx-6 text-base"><p-tag class="mx-2"  value="New"/>Release</h1>
+            <p-carousel 
+    [value]="images" 
+    [numVisible]="1" 
+    [numScroll]="1" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    
+    >
+        <ng-template let-product pTemplate="item">
+            <div class="p-0">
+                <div class="mb-6">
+                    <div class="h-full">
+                        <img 
+                            src="{{ product.image }}" 
+                            [alt]="product.caption" 
+                            class="w-full h-30rem border-round" />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+</p-carousel>
+        </div>
+    </div>
+</section>
+ 
+
+    <section class="marvels">
+        <h2 class="capitalize">marvel universe</h2>
+        <div class="grid">
+            @for (movie of marvels; track $index) {
+                <div class="col-12 md:col-6 lg:col-2 cursor-pointer m-2">
+                    <div class="movies-card text-center border-round-sm border-1 border-primary font-bold  h-15rem">
+                    <img class="w-full h-full" src="{{movie.poster}}" alt="{{movie.title}}">
+                    </div>
+                    </div>
+            }
+        </div>
+        <p class="m-0 text-right text-primary"><a class="mx-1 text-primary" [routerLink]="''">see more</a> <fa-icon
+        class="mr-2"
+        [icon]="faDoubleRight">
+        </fa-icon></p>
+    </section>
