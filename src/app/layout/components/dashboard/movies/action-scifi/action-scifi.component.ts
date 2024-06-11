@@ -29,7 +29,7 @@ export class ActionScifiComponent {
       title:'Rebel moon',
       genre:'Action sci-fi',
       releaseDate:'2023',
-      poster:"https://i.pinimg.com/originals/b4/49/b2/b449b2e9b7b4669b5d921b05066cf0e1.jpg"
+      poster:"https://i.pinimg.com/originals/97/da/52/97da52f84437a633ec3c7f73dfba0181.jpg"
 
     },
     {
@@ -37,7 +37,7 @@ export class ActionScifiComponent {
       title:'Rebel moon',
       genre:'Action sci-fi',
       releaseDate:'2024',
-      poster:"https://i.pinimg.com/originals/65/f0/a5/65f0a5d31be744782ac6f2d143d09a05.jpg"
+      poster:"https://i.pinimg.com/736x/82/b4/00/82b400d554945ab8e0539ba9fd012907.jpg"
 
     },
     {
