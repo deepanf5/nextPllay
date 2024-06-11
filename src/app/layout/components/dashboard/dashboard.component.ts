@@ -41,6 +41,14 @@ export class DashboardComponent implements OnInit {
   marvels = [
     {
 
+      title:'Iron Man',
+      genre:'Action/Adventure',
+      releaseDate:'27 April 2012',
+      poster:"https://i.pinimg.com/originals/14/85/b5/1485b5a78274180bcce4a0fce0ef3c4a.jpg"
+
+    },
+    {
+
       title:'thor ragnarok',
       genre:'Action/Adventure',
       releaseDate:'27 April 2012',
