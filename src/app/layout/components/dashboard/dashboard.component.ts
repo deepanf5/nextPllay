@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
 
     {
-    image:"https://images8.alphacoders.com/134/thumb-1920-1344731.jpeg"
+    image:"https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/353CC6E434CA544C677596ACDDE553B762C4D4E49E52F36B4C3205EA49CFA8DD/scale?width=1200&aspectRatio=1.78&format=webp"
     },
     {
     image:"https://images7.alphacoders.com/136/thumb-1920-1364834.png"
