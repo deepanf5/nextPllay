@@ -54,7 +54,7 @@ export class ActionScifiComponent {
     },
     {
 
-      title:'Transformer rise of the beast',
+      title:'Transformer : rise of the beast',
       genre:'Action sci-fi',
       releaseDate:'2013',
       poster:"https://i.pinimg.com/originals/f2/9e/81/f29e81c4527a8d05f00e6a2f13d2b510.jpg",

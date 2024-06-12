@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MarvelComponent } from './movies/marvel/marvel.component';
 import { ActionScifiComponent } from './movies/action-scifi/action-scifi.component';
 import { ThrillerComponent } from './movies/thriller/thriller.component';
+import { DisneyPixarComponent } from './movies/disney-pixar/disney-pixar.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +18,8 @@ import { ThrillerComponent } from './movies/thriller/thriller.component';
     RouterModule,
     MarvelComponent,
     ActionScifiComponent,
-    ThrillerComponent
+    ThrillerComponent,
+    DisneyPixarComponent
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'

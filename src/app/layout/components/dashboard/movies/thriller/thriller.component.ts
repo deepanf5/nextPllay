@@ -17,7 +17,7 @@ export class ThrillerComponent {
   Thirller = [
     {
 
-      title:'Elysium',
+      title:'the beekeeper',
       genre:'Action thirller',
       releaseDate:'2024',
       poster:"https://i.pinimg.com/originals/d9/a7/4c/d9a74c02647f9728b162df7bd843a3ec.jpg",
