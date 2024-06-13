@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
+import { Component, OnInit } from '@angular/core';
+
+// prime-ng
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { FilterService } from 'primeng/api';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CardModule,ButtonModule],
+  imports: [IconFieldModule,InputIconModule,InputTextModule,FormsModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
 })
-export class MoviesComponent {
+export class MoviesComponent implements OnInit{
+
+  searchMovies:any
+  filteredMovies:any;
+
+  constructor(private filterService:FilterService) {}
+  ngOnInit(): void {
+    this.filteredMovies = this.movies
+  }
 
   
   movies = [
@@ -194,5 +207,11 @@ export class MoviesComponent {
 
     },
 ]
+
+filterMovies(searchmovie: string) {
+  this.filteredMovies = this.movies.filter(movie =>
+    movie.title.toLowerCase().includes(searchmovie.toLowerCase())
+  );
+}
 
 }
