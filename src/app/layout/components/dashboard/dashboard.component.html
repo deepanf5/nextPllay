@@ -28,19 +28,11 @@
 </section>
  
 
-    <section class="marvels">
-        <h2 class="capitalize">marvel universe</h2>
-        <div class="grid">
-            @for (movie of marvels; track $index) {
-                <div class="col-12 md:col-6 lg:col-2 cursor-pointer m-2">
-                    <div class="movies-card text-center border-round-sm border-1 border-primary font-bold  h-15rem">
-                    <img class="w-full h-full" src="{{movie.poster}}" alt="{{movie.title}}">
-                    </div>
-                    </div>
-            }
-        </div>
-        <p class="m-0 text-right text-primary"><a class="mx-1 text-primary" [routerLink]="''">see more</a> <fa-icon
-        class="mr-2"
-        [icon]="faDoubleRight">
-        </fa-icon></p>
+    <section class="movies">
+        <app-marvel></app-marvel>
+        <app-action-scifi></app-action-scifi>
+        <app-thriller></app-thriller>
+        <app-disney-pixar></app-disney-pixar>
     </section>
+
+    
