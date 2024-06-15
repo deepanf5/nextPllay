@@ -6,11 +6,12 @@ import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { FilterService } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [IconFieldModule,InputIconModule,InputTextModule,FormsModule],
+  imports: [IconFieldModule,InputIconModule,InputTextModule,FormsModule,RouterModule],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
 })

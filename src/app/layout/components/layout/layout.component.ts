@@ -5,6 +5,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription, filter } from 'rxjs';
 import { LayoutService } from '../../services/layout.service';
 import { NavigationEnd,Router, RouterModule, Routes } from '@angular/router';
+import { MovieDetailsComponent } from '../../../movies/movie-details/movie-details.component';
 
 
 export const layoutRoutes:Routes = [
@@ -16,11 +17,15 @@ export const layoutRoutes:Routes = [
     path:'movies',loadComponent:() => import('../../../movies/movies.component').then(c => c.MoviesComponent)
   },
   {
+    path:'movies/movies-details',loadComponent:() => import('../../../movies/movie-details/movie-details.component').then(c => MovieDetailsComponent)
+  },
+  {
     path:'series',loadComponent:() => import('../../../series/series.component').then(c => c.SeriesComponent)
   },
   {
     path:'sports',loadComponent:() => import('../../../sports/sports.component').then(c => c.SportsComponent)
-  }
+  },
+  
 ]
 
 @Component({
