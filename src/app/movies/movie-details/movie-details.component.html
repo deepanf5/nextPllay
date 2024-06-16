@@ -1,7 +1,22 @@
-<div class="background-container" [style.backgroundImage]="'url(' + backgroundImageUrl + ')'">
-    <div class="banner-content">
-        <h2>title</h2>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
+<div class="grid card">
+    <div class="col-12 md:col-6 lg:col-12 h-20rem bg-primary p-0">
+        <div class="text-center m-0 border-round-sm font-bold">
+            <img class="w-full h-20rem banner-img" src="{{backgroundImageUrl}}" alt="">
+        </div>
     </div>
+    <div class="col-12 md:col-6 lg:col-6  h-20rem">
+        <div class="border-round-sm  font-bold">
+            <h2 class="capitalize">elysium</h2>
+            <p-rating [(ngModel)]="value" [cancel]="false" />
+            <p class="text-base font-light text-sm line-height-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ducimus dolorum blanditiis saepe, odit deleniti sit dignissimos hic magni neque!</p>
+            <p-button size="small" label="Watch" icon="pi pi-eye"  />
+        </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-6  h-20rem">
+        <div class="p-3 border-round-sm  font-bold mt-7">
+            
 
-  </div>
+
+        </div>
+    </div>
+</div>
