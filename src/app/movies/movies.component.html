@@ -2,18 +2,17 @@
     <p-iconField  iconPosition="left">
         <p-inputIcon styleClass="pi pi-search" />
         <input [(ngModel)]="searchMovies" type="text" pInputText placeholder="Search" style="width: 500px;" (ngModelChange)="filterMovies(searchMovies)" />
-    </p-iconField>
-    <div class="grid mt-5">
+        </p-iconField>
+        <div class="grid mt-5">
         @if (filteredMovies.length === 0) {
                 <h2>No movies found !</h2>
         }
         @for (movie of filteredMovies; track $index) {
-            <div class="col-12 md:col-6 lg:col-2 cursor-pointer m-2">
+            <div (click)="sendMovie(movie)" [routerLink]="'movies-details'" class="col-12 md:col-6 lg:col-2 cursor-pointer m-3">
                 <div class="movies-card text-center border-round-sm border-1 border-primary font-bold  h-15rem">
                 <img class="w-full h-full" src="{{movie.poster}}" alt="{{movie.title}}">
                 </div>
                 <p class="text-sm capitalize">{{movie.title}}</p>
-                <a [routerLink]="'movies-details'">movie details</a>
                 </div>
         }
     </div>
