@@ -1,6 +1,6 @@
 <section class="Action-scifi">
     <div class="grid">
-        <div class="col-12 md:col-6 lg:col-4">
+        <div class="col-12 md:col-6 lg:col-6">
             <div class="border-round-sm font-bold">
                 <p-iconField  iconPosition="left">
                     <p-inputIcon styleClass="pi pi-search" />
@@ -8,7 +8,7 @@
                     </p-iconField>
             </div>
         </div>
-        <div class="col-12 md:col-6 lg:col-5">
+        <div class="col-12 md:col-6 lg:col-3">
             <div class="text-center  border-round-sm font-bold">
                 <p-dropdown 
                 (onChange)="filterbyYear()"
@@ -18,6 +18,12 @@
     placeholder="filter by year" />
             </div>
         </div>
+        @if (filter) {
+            <div class="col-12 md:col-6 lg:col-3">
+                <p-button (click)="clear()" label="Clear Filter" [text]="true" severity="success" />
+            </div>
+        }
+        
     </div>
         <div class="grid mt-5">
         @if (filteredMovies.length === 0) {

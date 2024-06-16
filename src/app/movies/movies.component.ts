@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { MoviesService } from './services/movie/movies.service';
 import { DropdownModule } from 'primeng/dropdown';
 import { Movie } from './movies';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -22,7 +23,8 @@ import { Movie } from './movies';
     InputTextModule,
     FormsModule,
     RouterModule,
-    DropdownModule
+    DropdownModule,
+    ButtonModule
   ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
@@ -32,7 +34,8 @@ export class MoviesComponent implements OnInit{
   searchMovies:any
   filteredMovies:any;
   year:any;
-  genre:any
+  genre:any;
+  filter:boolean = false;
 
   selectedYear:any;
 
@@ -263,12 +266,14 @@ export class MoviesComponent implements OnInit{
 ]
 
 filterMovies(searchmovie: string) {
+  this.filter = true
   this.filteredMovies = this.movies.filter(movie =>
     movie.title.toLowerCase().includes(searchmovie.toLowerCase())
   );
 }
 
 filterbyYear() {
+  this.filter = true
   this.filteredMovies = this.movies.filter((movie:any) => {
     if(movie.releaseDate === this.selectedYear.year) return movie
   })
@@ -277,6 +282,11 @@ filterbyYear() {
 
 sendMovie(movie:Movie){
   this.moviesService.movieDetail.set(movie)
+}
+
+clear() {
+  this.filter = false
+  this.filteredMovies = this.movies
 }
 
 
