@@ -7,6 +7,7 @@ import { MoviesService } from '../services/movie/movies.service';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-movie-details',
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    SidebarModule
   ],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.scss'
@@ -26,9 +28,9 @@ import { RouterModule } from '@angular/router';
 export class MovieDetailsComponent implements OnInit{
   formGroup!: FormGroup;
   value = 3.5;
-  playIcon = faPlay
-
+  playIcon = faPlay;
   movie:any;
+  watchMovie:boolean = false
 
   constructor(private moviesServices:MoviesService) {
      this.movie =  this.moviesServices.movieDetail();
