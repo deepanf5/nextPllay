@@ -6,6 +6,7 @@ import { RatingModule } from 'primeng/rating';
 import { MoviesService } from '../services/movie/movies.service';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RatingModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
   ],
   templateUrl: './movie-details.component.html',
   styleUrl: './movie-details.component.scss'

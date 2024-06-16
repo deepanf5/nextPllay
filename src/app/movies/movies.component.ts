@@ -8,6 +8,7 @@ import { FilterService } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MoviesService } from './services/movie/movies.service';
+import { DropdownModule } from 'primeng/dropdown';
 import { Movie } from './movies';
 
 
@@ -15,7 +16,14 @@ import { Movie } from './movies';
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [IconFieldModule,InputIconModule,InputTextModule,FormsModule,RouterModule],
+  imports: [
+    IconFieldModule,
+    InputIconModule,
+    InputTextModule,
+    FormsModule,
+    RouterModule,
+    DropdownModule
+  ],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
 })
@@ -23,11 +31,44 @@ export class MoviesComponent implements OnInit{
 
   searchMovies:any
   filteredMovies:any;
+  year:any;
+  genre:any
+
+  selectedYear:any;
+
 
 
   constructor(private moviesService:MoviesService) {}
   ngOnInit(): void {
     this.filteredMovies = this.movies
+    this.year = [
+      { year: 2000, code: 'NY' },
+      { year: 2001, code: 'RM' },
+      { year: 2003, code: 'LDN' },
+      { year: 2004, code: 'IST' },
+      { year: 2005, code: 'PRS' },
+      { year: 2006, code: 'PRS' },
+      { year: 2007, code: 'PRS' },
+      { year: 2008, code: 'PRS' },
+      { year: 2009, code: 'PRS' },
+      { year: 2010, code: 'PRS' },
+      { year: 2011, code: 'PRS' },
+      { year: 2012, code: 'PRS' },
+      { year: 2013, code: 'PRS' },
+      { year: 2014, code: 'PRS' },
+      { year: 2015, code: 'PRS' },
+      { year: 2016, code: 'PRS' },
+      { year: 2017, code: 'PRS' },
+      { year: 2018, code: 'PRS' },
+      { year: 2019, code: 'PRS' },
+      { year: 2020, code: 'PRS' },
+      { year: 2021, code: 'PRS' },
+      { year: 2022, code: 'PRS' },
+      { year: 2023, code: 'PRS' },
+      { year: 2024, code: 'PRS' },
+  ];  
+
+  
   }
 
   
@@ -68,7 +109,8 @@ export class MoviesComponent implements OnInit{
       genre:'Action sci-fi',
       releaseDate:2020,
       poster:"https://i.pinimg.com/originals/35/62/1c/35621c61d9b8bc652beba9245695805e.jpg",
-      language:'Engilsh'
+      language:'Engilsh',
+      banner:'https://images3.alphacoders.com/109/thumb-1920-1092126.jpg'
 
     },
     {
@@ -77,7 +119,8 @@ export class MoviesComponent implements OnInit{
       genre:'Action sci-fi',
       releaseDate:2013,
       poster:"https://i.pinimg.com/originals/f2/9e/81/f29e81c4527a8d05f00e6a2f13d2b510.jpg",
-      language:'Engilsh'
+      language:'Engilsh',
+      banner:'https://images5.alphacoders.com/131/thumb-1920-1314912.jpeg'
 
     },
     {
@@ -86,16 +129,18 @@ export class MoviesComponent implements OnInit{
       genre:'Action thirller',
       releaseDate:2024,
       poster:"https://i.pinimg.com/originals/d9/a7/4c/d9a74c02647f9728b162df7bd843a3ec.jpg",
-      language:'Engilsh'
+      language:'Engilsh',
+      banner:'https://4kwallpapers.com/images/walls/thumbs_3t/14022.jpg'
 
     },
     {
 
-      title:'John wick',
+      title:'John wick 2',
       genre:'Action thriller',
-      releaseDate:2023,
+      releaseDate:2017,
       poster:"https://i.pinimg.com/originals/63/17/13/63171370473454a0f2981d989213f8f3.jpg",
-      language:'Engilsh'
+      language:'Engilsh',
+      banner:'https://images3.alphacoders.com/746/thumb-1920-746551.jpg'
 
     },
     {
@@ -221,6 +266,12 @@ filterMovies(searchmovie: string) {
   this.filteredMovies = this.movies.filter(movie =>
     movie.title.toLowerCase().includes(searchmovie.toLowerCase())
   );
+}
+
+filterbyYear() {
+  this.filteredMovies = this.movies.filter((movie:any) => {
+    if(movie.releaseDate === this.selectedYear.year) return movie
+  })
 }
 
 

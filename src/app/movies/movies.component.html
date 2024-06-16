@@ -1,8 +1,24 @@
 <section class="Action-scifi">
-    <p-iconField  iconPosition="left">
-        <p-inputIcon styleClass="pi pi-search" />
-        <input [(ngModel)]="searchMovies" type="text" pInputText placeholder="Search" style="width: 500px;" (ngModelChange)="filterMovies(searchMovies)" />
-        </p-iconField>
+    <div class="grid">
+        <div class="col-12 md:col-6 lg:col-4">
+            <div class="border-round-sm font-bold">
+                <p-iconField  iconPosition="left">
+                    <p-inputIcon styleClass="pi pi-search" />
+                    <input [(ngModel)]="searchMovies" type="text" pInputText placeholder="Search" style="width: 500px;" (ngModelChange)="filterMovies(searchMovies)" />
+                    </p-iconField>
+            </div>
+        </div>
+        <div class="col-12 md:col-6 lg:col-5">
+            <div class="text-center  border-round-sm font-bold">
+                <p-dropdown 
+                (onChange)="filterbyYear()"
+    [options]="year" 
+    [(ngModel)]="selectedYear" 
+    optionLabel="year" 
+    placeholder="filter by year" />
+            </div>
+        </div>
+    </div>
         <div class="grid mt-5">
         @if (filteredMovies.length === 0) {
                 <h2>No movies found !</h2>
