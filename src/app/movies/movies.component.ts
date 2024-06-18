@@ -83,7 +83,9 @@ export class MoviesComponent implements OnInit{
       releaseDate:2013,
       poster:"https://i.pinimg.com/originals/40/d2/94/40d29423c00552439d1e597a9eabbaba.jpg",
       language:'Engilsh',
-      banner:'https://wallpapercave.com/wp/wp13897935.jpg'
+      banner:'https://wallpapercave.com/wp/wp13897935.jpg',
+      rating:'6.6',
+      description:'In 2154, the rich live in Elysium, an advanced space station, while the others thrive in poverty on Earth. Max begins a journey to Elysium to change the fate of humans on Earth and restore equality.'
 
     },
     {

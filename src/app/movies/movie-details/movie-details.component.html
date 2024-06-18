@@ -1,5 +1,5 @@
 <section class="movies-details">
-<span [routerLink]="'/nextplay/movies'"><i  class="pi pi-arrow-left mb-5 cursor-pointer" style="font-size: 1rem"></i></span>
+<i [routerLink]="'/nextplay/movies'"  class="pi pi-arrow-left mb-5 cursor-pointer" style="font-size: 1rem"></i>
     <div class="grid card">
     <div class="col-12 md:col-6 lg:col-12 h-25rem  p-0">
         <div class="text-center m-0 border-round-sm font-bold">
@@ -14,8 +14,8 @@
     <div class="col-12 md:col-6 lg:col-6  h-20rem">
         <div class="border-round-sm  font-bold">
             <h2 class="capitalize">{{movie.title}}</h2>
-            <p-rating [(ngModel)]="value" [cancel]="false" />
-            <p class="text-base font-light text-sm line-height-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ducimus dolorum blanditiis saepe, odit deleniti sit dignissimos hic magni neque!</p>
+            <p-rating [(ngModel)]="movie.rating" [cancel]="false" />
+            <p class="text-base font-light text-sm line-height-3">{{movie.description}}</p>
             <p-button (click)="watchMovie = true" class="custom-icon" size="small" label="Play" icon="pi pi-play" iconPos="right" />
         </div>
     </div>
