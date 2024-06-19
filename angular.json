@@ -31,6 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/video.js/dist/video-js.css",
                {
                 "input": "src/themes/rhea.css",
                 "bundleName": "rhea",

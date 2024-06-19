@@ -1,3 +1,7 @@
 .banner-img {
     object-fit:fill;
 }
+
+:host ::ng-deep .p-sidebar {
+ background-color: rgba(0,0,0,0.9);
+}

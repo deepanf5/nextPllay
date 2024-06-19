@@ -31,14 +31,40 @@
 
 
 <p-sidebar [(visible)]="watchMovie" [fullScreen]="true">
-    <ng-template pTemplate="header">
-        <span class="font-semibold text-xl">
-            Sidebar
+    <!-- <ng-template pTemplate="header">
+        <span class="font-semibold text-xl bg-black">
+            <h2 class="capitalize">{{movie.title}}</h2>
+            
         </span>
-    </ng-template>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-    </p>
+    </ng-template> -->
+
+<div class="surface-0  bg-black-alpha-90  shadow-2 border-round p-4">
+    <div class="text-3xl bg-black-alpha-90 font-medium">{{movie.title}}</div>
+    <div class="font-medium  bg-black-alpha-90 text-center">
+         <video
+       #target 
+       class="video-js"
+       controls muted playsinline
+       preload="none"
+       width="80%" height="30%" 
+       ><source 
+       [src]="videoLink"
+       type="video/mp4">
+
+</video>
+    </div>
     
+</div>
+            
+     
+    <!-- <video #target class="video-js" controls muted playsinline preload="none"></video> -->
+
+    <!-- <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264">
+        <source src="path/to/your/video.mp4" type="video/mp4">
+        Include other video sources here (WebM, Ogg, etc.)
+        Your browser does not support the video tag.
+      </video> -->
+    
+   
 </p-sidebar>
 <!-- <p-button  icon="pi pi-window-maximize" /> -->
