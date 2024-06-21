@@ -7,9 +7,11 @@ import { MoviesService } from '../services/movie/movies.service';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
-import { SidebarModule } from 'primeng/sidebar';
+import { DialogService, DynamicDialogModule, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-declare var videojs: any;
+import { PlayMovieComponent } from '../play-movie/play-movie.component';
+
+// declare var videojs: any;
 
 @Component({
   selector: 'app-movie-details',
@@ -22,67 +24,58 @@ declare var videojs: any;
     ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule,
-    SidebarModule,
+    DynamicDialogModule
     
   ],
   templateUrl: './movie-details.component.html',
-  styleUrl: './movie-details.component.scss'
+  styleUrl: './movie-details.component.scss',
+  providers: [DialogService]
+  
 })
-export class MovieDetailsComponent implements OnInit, AfterViewInit, OnDestroy{
+export class MovieDetailsComponent implements OnInit{
   formGroup!: FormGroup;
   value = 3.5;
   playIcon = faPlay;
   movie:any;
   watchMovie:boolean = false;
-  player!: any;
-  @ViewChild('target', {static: true}) target!: ElementRef;
-  videoLink = 'https://vjs.zencdn.net/v/oceans.mp4';
+  public video!: HTMLVideoElement;
+  public player!: any;
+  ref: DynamicDialogRef | undefined;
+  @ViewChild('videoElement') videoElement!: ElementRef;
+  
 
-options = {
-  autoplay: false,
-  notSupportedMessage: 'Invalid Video URL', // to change the default message
-
-}
-  // player: videojs.Player;
-  // player: videojs;
-
-  constructor(private moviesServices:MoviesService) {
+  constructor(private moviesServices:MoviesService,public dialogService: DialogService) {
      this.movie =  this.moviesServices.movieDetail();
 
   }
-  
-  ngAfterViewInit(): void {
-      this.readyVideojsPlayer()
-  }
+ 
+
+
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
       value: new FormControl(4)
-  });
+  });  
 }
 
-
-readyVideojsPlayer() {
-
-  this.player = videojs(this.target.nativeElement, this.options, function () { 
-  
-  });
-
-  this.player.src({
-
-     src: this.videoLink,
-      type: 'video/mp4'
-
- })
-
-}
 
 ngOnDestroy(): void {
-  if (this.player) {
-    this.player.dispose();
-  }
+
 }
 
+
+show() {
+  this.ref = this.dialogService.open(PlayMovieComponent, { 
+      data: {
+          id: '51gF3'
+      },
+      header: `${this.movie.title}`,
+      width: '100%',
+            contentStyle: { overflow: 'hidden' },
+            baseZIndex: 1000,
+            
+  });
+}
 
 
  

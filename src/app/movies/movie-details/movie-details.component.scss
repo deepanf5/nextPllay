@@ -1,7 +1,17 @@
+@import 'video.js/dist/video-js.css';
+
 .banner-img {
     object-fit:fill;
 }
 
-:host ::ng-deep .p-sidebar {
- background-color: rgba(0,0,0,0.9);
-}
+
+::ng-deep .p-dialog .p-dialog-header {
+    background-color:  rgba(0,0,0,0.9); 
+  }
+
+::ng-deep .p-dialog .p-dialog-content {
+    padding: 0;
+    margin: 0;
+    background-color:  rgba(0,0,0,0.9);
+  }
+
